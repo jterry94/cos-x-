@@ -94,13 +94,10 @@ struct ContentView: View {
     
     
     
-
+    
+    /// calculateCos_X
+    /// Function accepts the command to start the calculation from the GUI
     func calculateCos_X(){
-        
-      //  let x = -1.0/2.0*Double.pi
-      //  let x = 2.0*Double.pi
-        
-        //let x = Double.pi/4.0
         
         let x = Double(xInput)
         xInput = "\(x!)"

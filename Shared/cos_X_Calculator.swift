@@ -9,34 +9,7 @@ import Foundation
 import SwiftUI
 import CorePlot
 
-//                  oo                  2n
-//                  __            n    x
-//    cos (x)  =   \        ( - 1)   ------
-//                 /__               (2n)!
-//                 n = 0
-
-
-
-//                      oo                   2n
-//                      __             n    x
-//    cos (x) - 1   =   \        ( - 1)   ------
-//                      /__               (2n)!
-//                     n = 1
-
-//                  oo                  2n
-//                  __            n    x
-//    cos (x)  =   \        ( - 1)   ------
-//                 /__               (2n)!
-//                 n = 0
-
-
-//                               2
-//      th                     x                     th
-//    n   term  =    ( - 1)  ---------    *   (n - 1)    term
-//                           2n * (2n-1)
-//
-
-
+// Create aliases that make it easier to pass in inputs as parameters.
 typealias nthTermParameterTuple = (n: Int, x: Double)
 typealias nthTermMultiplierHandler = (_ parameters: [nthTermParameterTuple]) -> Double
 typealias ErrorHandler = (_ parameters: [ErrorParameterTuple]) -> Double
@@ -286,6 +259,9 @@ class Cos_X_Calculator: ObservableObject {
         
     }
     
+    /// cosErrorCalculator
+    /// - Parameter parameters: Tuple containing the parameters necessary to calculate the error form the true value of the function
+    /// - Returns: log10(error) This is effectively the negative of the number of digits to which the calculation is "true."
     func cosErrorCalculator(parameters: [ErrorParameterTuple])-> Double{
         
         var error = 0.0
